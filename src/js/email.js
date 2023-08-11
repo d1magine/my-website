@@ -7,6 +7,9 @@ export function showEmailWindow() {
 export function handleSubmit(e) {
   e.preventDefault();
 
+  const button = document.getElementById("submit");
+  button.disabled = true;
+
   const contactForm = e.target;
   const formData = new FormData(contactForm);
 
