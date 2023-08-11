@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/src/images/favicon.ico" type="image/x-icon" />
+    <title>Главная</title>
+  </head>
+  <body>
+    <div class="overlay"></div>
+
+    <div class="wrapper">
+      <section id="panel-bar">
+        <div class="container">
+          <div id="logo">
+            Меню
+            <img src="images/icons/dropdown.png" />
+            <div id="dropdown">
+              <a href="https://github.com/l1xly" target="_blank">
+                GitHub
+                <img src="images/social-icons/github.svg" />
+              </a>
+              <a href="https://t.me/do_zolotukhin" target="_blank">
+                Telegram
+                <img src="images/social-icons/telegram.svg" />
+              </a>
+              <a href="https://vk.com/id132974210" target="_blank">
+                VK
+                <img src="images/social-icons/vk.svg" />
+              </a>
+            </div>
+          </div>
+          <div>
+            <div id="clocks"></div>
+            <div id="date"></div>
+          </div>
+        </div>
+      </section>
+      <section id="desktop">
+        <div class="container">
+          <div class="icon">
+            <img src="images/icons/trash.png" />
+            <p>корзина</p>
+          </div>
+          <div id="about-me-icon" class="icon">
+            <img src="images/icons/bio.png" />
+            <p>обо мне</p>
+          </div>
+          <div id="weather-icon" class="icon">
+            <img src="images/icons/weather.png" />
+            <p>погода</p>
+          </div>
+          <div id="email-icon" class="icon">
+            <img src="images/icons/email.png" />
+            <p>почта</p>
+          </div>
+          <div id="projects-icon" class="icon">
+            <img src="images/icons/folder.png" />
+            <p>проекты</p>
+          </div>
+        </div>
+        <section
+          class="interaction-window"
+          id="about-me-window"
+          style="display: none"
+        >
+          <div class="window-head">
+            <div>
+              <img src="images/icons/bio.png" />
+              <h5>обо мне</h5>
+            </div>
+            <div class="window-actions">
+              <div class="expand-action"></div>
+              <div class="close-action"></div>
+            </div>
+          </div>
+          <div class="window-body">
+            <div class="container">
+              <img src="images/avatar.jpg" />
+              <h3>Привет, меня зовут Дима!</h3>
+              <h4>Обо мне</h4>
+              <p>
+                Мне 22 года. В 2023 закончил ЮЗГУ по направлению "Информатика и
+                вычислительная техника". Я изучаю разработку сайтов,
+                преимущественно в области frontend. Я стремлюсь создавать не
+                только функциональные, но и красивые сайты, которыми будет
+                приятно пользоваться. В остальное время я учусь играть на гитаре
+                и увлекаюсь видеоиграми. Этот сайт является моим портфолио, где
+                я буду выкладывать проекты. Спасибо, что заглянули на него!
+              </p>
+              <h4>Навыки</h4>
+              <div class="skills">
+                <div>
+                  <img src="images/skills-icons/react.png" />
+                  <p>React.js</p>
+                </div>
+                <div>
+                  <img src="images/skills-icons/js.png" />
+                  <p>JavaScript</p>
+                </div>
+                <div>
+                  <img src="images/skills-icons/html.png" />
+                  <p>HTML5</p>
+                </div>
+                <div>
+                  <img src="images/skills-icons/css.png" />
+                  <p>CSS3</p>
+                </div>
+
+                <div>
+                  <img src="images/skills-icons/tailwindcss.svg" />
+                  <p>Tailwind CSS</p>
+                </div>
+                <div>
+                  <img src="images/skills-icons/sass.png" />
+                  <p>Sass</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="interaction-window"
+          id="email-window"
+          style="display: none"
+        >
+          <div class="window-head">
+            <div>
+              <img src="images/icons/email.png" />
+              <h5>почта</h5>
+            </div>
+            <div class="window-actions">
+              <div class="expand-action"></div>
+              <div class="close-action"></div>
+            </div>
+          </div>
+          <div class="window-body">
+            <div class="container">
+              <h3>Напишите мне</h3>
+              <form name="contact" method="POST" data-netlify="true">
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  placeholder="Как вас зовут?"
+                  autocomplete="off"
+                  required
+                /><input
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="Ваша почта?"
+                  required
+                /><textarea
+                  id="message"
+                  name="message"
+                  placeholder="Сообщение"
+                  cols="30"
+                  rows="10"
+                  autocomplete="off"
+                ></textarea
+                ><input id="submit" type="submit" value="Отправить" />
+              </form>
+            </div>
+          </div>
+        </section>
+        <section
+          class="interaction-window"
+          id="projects-window"
+          style="display: none"
+        >
+          <div class="window-head">
+            <div>
+              <img src="images/icons/folder.png" />
+              <h5>проекты</h5>
+            </div>
+            <div class="window-actions">
+              <div class="expand-action"></div>
+              <div class="close-action"></div>
+            </div>
+          </div>
+          <div class="window-body">
+            <a
+              class="icon"
+              href="https://github.com/l1xly/baikal"
+              target="_blank"
+            >
+              <img src="images/icons/folder-2.png" />
+              <p>байкал</p>
+            </a>
+            <a
+              class="icon"
+              href="https://github.com/l1xly/gamepedia"
+              target="_blank"
+            >
+              <img src="images/icons/folder-2.png" />
+              <p>gamepedia</p>
+            </a>
+          </div>
+        </section>
+        <section
+          class="interaction-window"
+          id="weather-window"
+          style="display: none"
+        >
+          <div class="window-head">
+            <div>
+              <img src="images/icons/weather.png" />
+              <h5>погода</h5>
+            </div>
+            <div class="window-actions">
+              <div class="expand-action"></div>
+              <div class="close-action"></div>
+            </div>
+          </div>
+          <div class="window-body">
+            <span class="loader"></span>
+            <div class="error-msg">
+              <p></p>
+              <img src="images/weather-icons/error.png" />
+            </div>
+            <div class="weather-info">
+              <img />
+              <h3><span>℃</span></h3>
+              <h4></h4>
+              <div class="weather-stats">
+                <div>
+                  <img src="images/weather-icons/wind.png" />
+                  <p>Ветер</p>
+                  <p class="wind"></p>
+                </div>
+                <div>
+                  <img src="images/weather-icons/humidity.png" />
+                  <p>Влажность</p>
+                  <p class="humidity"></p>
+                </div>
+                <div>
+                  <img src="images/weather-icons/cloud.png" />
+                  <p>Облачность</p>
+                  <p class="cloud"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </div>
+
+    <div class="popup">
+      <div class="head"></div>
+      <div class="body">
+        <img src="images/success.png" alt="" />
+        <h4>Письмо было успешно отправлено!</h4>
+        <a href="">хорошо</a>
+      </div>
+    </div>
+  </body>
+</html>

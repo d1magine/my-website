@@ -1,0 +1,40 @@
+.icon {
+  text-align: center;
+  width: 90px;
+  cursor: url("../images/cursor-icons/pointer.svg"), auto !important;
+
+  * {
+    cursor: url("../images/cursor-icons/pointer.svg"), auto !important;
+  }
+
+  img {
+    width: 45px;
+    height: 45px;
+  }
+
+  p {
+    width: fit-content;
+    padding-inline: 6px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+    margin-inline: auto;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+}
+
+// Анимация иконки
+.bounce-animation {
+  animation: bounce 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) 1 alternate;
+}
+
+@keyframes bounce {
+  from {
+    transform: none;
+  }
+
+  to {
+    transform: translateY(-13px);
+  }
+}

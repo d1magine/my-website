@@ -1,0 +1,18 @@
+#projects-window {
+  height: 260px;
+
+  .window-head {
+    background-color: #bfbffc;
+  }
+
+  .window-body {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 20px;
+  }
+
+  .icon {
+    width: 80px;
+  }
+}

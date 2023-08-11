@@ -1,0 +1,129 @@
+@import "../utilities/variables";
+@import "../utilities/mixins";
+
+.interaction-window {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  overflow: hidden;
+  border-radius: 8px;
+  border: $window-border;
+  box-shadow: -6px 6px 0 #000;
+  width: 360px;
+  height: 540px;
+  top: 0;
+  left: 0;
+}
+
+// Заголовок окна
+.window-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 8px;
+  background-color: #fff963;
+  border-bottom: $window-border;
+  cursor: url("../images/cursor-icons/grabber.svg"), auto !important;
+
+  // Иконка и название
+  & > div:nth-child(1) {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: url("../images/cursor-icons/grabber.svg"), auto !important;
+
+    img {
+      width: 18px;
+      height: 18px;
+    }
+
+    h5 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+  }
+}
+
+// Кнопки "расширить" и "закрыть"
+.window-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  .expand-action,
+  .close-action {
+    width: $window-action-size;
+    height: $window-action-size;
+    padding: 4px;
+    position: relative;
+    cursor: url("../images/cursor-icons/pointer.svg"), auto !important;
+  }
+
+  // Кнопка "расширить"
+  .expand-action {
+    &::after {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      content: "";
+      height: $window-action-size - 8px;
+      width: $window-action-size - 8px;
+      background-color: transparent;
+      border: 2px solid #000;
+    }
+  }
+
+  // Кнопка "закрыть"
+  .close-action {
+    position: relative;
+
+    &::after,
+    &::before {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      content: "";
+      height: $window-action-size;
+      width: 2px;
+      background-color: #000;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+// Тело окна
+.window-body {
+  @include custom-scrollbar;
+
+  flex: 1;
+  background-color: #fff;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 14px;
+}
+
+.fullscreen {
+  width: 100% !important;
+  height: 100% !important;
+  top: 0 !important;
+  left: 0 !important;
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+  transition: top 0.5s ease, left 0.5s ease, width 0.5s ease, height 0.5s ease;
+}
+
+.screen-top {
+  z-index: 100;
+}

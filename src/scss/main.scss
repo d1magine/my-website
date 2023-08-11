@@ -1,0 +1,99 @@
+@import "reset/reset";
+@import "reset/typography";
+
+@import "utilities/variables";
+@import "utilities/utilities";
+
+@import "components/desktop_icon";
+@import "components/interaction_window";
+@import "components/dropdown";
+@import "components/loader";
+@import "components/popup";
+
+@import "components/projects_window";
+@import "components/about_me_window";
+@import "components/email_window";
+@import "components/weather_window";
+
+body {
+  height: 100vh;
+  background: linear-gradient(#b6a3ff, #ffacfd),
+    linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+  background-blend-mode: overlay;
+  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+// Верхняя панель
+#panel-bar {
+  background-color: $topbar-color;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    height: 28px;
+    border-bottom: 1px solid #000;
+
+    & > div {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  // Лого
+  #logo {
+    gap: 4px;
+    border-right: 1px solid #000;
+    padding: 0 8px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: url("../images/cursor-icons/pointer.svg"), auto !important;
+
+    & > img {
+      margin-top: 3px;
+      width: 8px;
+      height: 8px;
+      cursor: url("../images/cursor-icons/pointer.svg"), auto !important;
+    }
+  }
+
+  #clocks,
+  #date {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    border-left: 1px solid #000;
+    padding: 0 8px;
+    font-weight: 500;
+  }
+}
+
+// Рабочий стол
+#desktop {
+  flex: 1;
+  position: relative;
+
+  & > .container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 30px 20px;
+  }
+}
+
+//--------------------- ДЛЯ ТЕЛЕФОНОВ------------------------------------------------
+@media (max-width: 576px) {
+  #desktop {
+    & > .container {
+      padding: 15px;
+      gap: 25px;
+    }
+  }
+}
